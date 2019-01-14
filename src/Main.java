@@ -3,14 +3,16 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        // Create and set up the window.
+        JFrame frame = new JFrame("Mandelbrot Set Explorer");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //JButton button = new JButton("Show Fractal");
-        //button.setBounds(170, 20, 140, 40);
-        //frame.add(button);
-        frame.add(new MJPanel());
-        frame.setSize(480, 360);
-        //frame.setLayout(null);
+
+        frame.getContentPane().add(new MJPanel());
+
+        // Display the window.
+        frame.setSize(640, 480);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
