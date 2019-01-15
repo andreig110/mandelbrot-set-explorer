@@ -26,7 +26,6 @@ public class FractalGenerator {
     }
 
     public void Generate(double regionCenterX, double regionCenterY, double regionSize) {
-        long elapsedTime = System.currentTimeMillis();
         double regionWidth, regionHeight;
         if (W_less_H) {
             regionWidth = regionSize;
@@ -50,21 +49,6 @@ public class FractalGenerator {
         double y0 = regionCenterY - regionHeight/2;
         double delta = regionWidth / W;    //  regionWidth/W  =  regionHeight/H  (must be)
 
-        System.out.println("W = " + W);
-        System.out.println("H = " + H);
-        System.out.println("W_less_H = " + W_less_H);
-        System.out.println("W_div_H = " + W_div_H);
-        System.out.println("H_div_W = " + H_div_W);
-        System.out.println("regionWidth = " + regionWidth);
-        System.out.println("regionHeight = " + regionHeight);
-        System.out.println("dx = " + regionWidth/W);
-        System.out.println("dy = " + regionHeight/H);
-        System.out.println("regionCenterX = " + regionCenterX);
-        System.out.println("regionCenterY = " + regionCenterY);
-        System.out.println("x0 = " + x0);
-        System.out.println("y0 = " + y0);
-        System.out.println("delta = " + delta);
-
         // X and Y are indexes in pixels[]
         for (int X=0; X<W; X++)
             for (int Y=0; Y<H; Y++)
@@ -87,8 +71,6 @@ public class FractalGenerator {
                 else
                     pixels[X + Y*W] = BLACK;
             }
-        elapsedTime = System.currentTimeMillis() - elapsedTime;
-        System.out.println("Fractal generated in " + elapsedTime + " ms");
     }
 
 }
